@@ -41,11 +41,11 @@ public class HelloController {
     @FXML
     private Label zipCodeCheck;
 
-    private BooleanProperty firstNameValid = new SimpleBooleanProperty(false);
-    private BooleanProperty lastNameValid = new SimpleBooleanProperty(false);
-    private BooleanProperty emailValid = new SimpleBooleanProperty(false);
-    private BooleanProperty dobValid = new SimpleBooleanProperty(false);
-    private BooleanProperty zipCodeValid = new SimpleBooleanProperty(false);
+    private final BooleanProperty firstNameValid = new SimpleBooleanProperty(false);
+    private final BooleanProperty lastNameValid = new SimpleBooleanProperty(false);
+    private final BooleanProperty emailValid = new SimpleBooleanProperty(false);
+    private final BooleanProperty dobValid = new SimpleBooleanProperty(false);
+    private final BooleanProperty zipCodeValid = new SimpleBooleanProperty(false);
 
     public void initialize() {
         addValidationListener(firstNameField, firstNameValid, "^[A-Za-z]{2,25}$");
@@ -149,19 +149,19 @@ public class HelloController {
 
     private void showCheckmark(TextField field) {
         if (field == firstNameField) {
-            firstNameCheck.setText("\u2713"); // Unicode checkmark
+            firstNameCheck.setText("✓"); // Unicode checkmark
             firstNameCheck.setVisible(true);
         } else if (field == lastNameField) {
-            lastNameCheck.setText("\u2713");
+            lastNameCheck.setText("✓");
             lastNameCheck.setVisible(true);
         } else if (field == emailField) {
-            emailCheck.setText("\u2713");
+            emailCheck.setText("✓");
             emailCheck.setVisible(true);
         } else if (field == dobField) {
-            dobCheck.setText("\u2713");
+            dobCheck.setText("✓");
             dobCheck.setVisible(true);
         } else if (field == zipCodeField) {
-            zipCodeCheck.setText("\u2713");
+            zipCodeCheck.setText("✓");
             zipCodeCheck.setVisible(true);
         }
     }
